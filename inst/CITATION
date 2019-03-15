@@ -1,16 +1,16 @@
 citHeader("To cite MM2S in publications use:")
 
 citEntry(entry="article",
-  title  ="MM2S: personalized diagnosis of medulloblastoma patients and model systems",
-  author = "Gendoo DM, Haibe-Kains B",
-  journal = "Source Code Biol Med.",
-  year = "2016",
+  title  ="Personalized Diagnosis of Medulloblastoma Subtypes Across Patients and Model Systems",
+  author = "Gendoo DM, Smirnov P, Lupien M, Haibe-Kains B",
+  journal = "Genomics",
+  year = "2015",
   volume = "",
   pages = "",
-  textVersion = paste("Gendoo DM, Haibe-Kains B",
-    "MM2S: personalized diagnosis of medulloblastoma patients and model systems",
-    "Source Code Biol Med."))
+  textVersion = paste("Gendoo DM, Smirnov P, Lupien M, Haibe-Kains B",
+    "Personalized Diagnosis of Medulloblastoma Subtypes Across Patients and Model Systems",
+    "Genomics"))
 
-citFooter("We have invested our time and effort in creating MM2S,",
+citFooter("We have invested our time and effort in creating MM2Sdata,",
           "we would be grateful if you could cite it when using it in your analysis.")
           
