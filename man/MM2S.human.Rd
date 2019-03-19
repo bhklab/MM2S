@@ -17,8 +17,8 @@ MM2S.human(InputMatrix,parallelize,seed = 12345,dir)
   \item{dir}{Option to save MM2S subtype predictions only if the user wants to and specifies the dir.}
 }
 \value{
-\item{Predictions}{MM2S Percent Confidence Predictions of Human Subtypes (Group3, Group4, Normal, SHH, WNT) for a given sample.}
-\item{MM2S_Subtype}{List of Sample names the designated Human MB subtype from MM2S classification.}
+\item{Predictions}{MM2S Percent Confidence Predictions of Human Subtypes (Group3, Group4, Normal, Sonic hedgehog (SHH),Wingless (WNT)) for a given sample.}
+\item{MM2S_Subtype}{List of Sample names the designated Human Medulloblastoma (MB) subtype from MM2S classification.}
 \item{RankMatrixTesting}{ssGSEA rank matrix of the test data, using selected genesets common between the test data and training set. These genesets are based on a filtered list using the top24 common genesets, for each subtype}
 \item{RankMatrixTraining}{ssGSEA rank matrix of the trained MM2S human data, using selected genesets common between the test data and training set. These genesets are based on a filtered list using the top24 common genesets, for each subtype}
 }

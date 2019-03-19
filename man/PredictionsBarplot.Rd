@@ -11,7 +11,7 @@ Users are provided the option to save this heatmap as a PDF file.
 PredictionsBarplot(InputMatrix,pdf_output,pdfheight,pdfwidth)
 }
 \arguments{
-  \item{InputMatrix}{Matrix with samples in rows, and columns with MM2S percentage predictions for each subtype (Gr4,Gr3,SHH,WNT, and Normal)}
+  \item{InputMatrix}{Matrix with samples in rows, and columns with MM2S percentage predictions for each subtype (Gr4,Gr3,Sonic hedgehog (SHH),Wingless (WNT), and Normal)}
   \item{pdf_output}{Option to save the heatmap as a PDF file}
   \item{pdfheight}{User-defined specification for PDF height size}
   \item{pdfwidth}{User-defined specification for PDF width size}

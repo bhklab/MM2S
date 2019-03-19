@@ -2,7 +2,7 @@
 \alias{PCARender}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-PCA Projections of ssGSEA Rank Matrix for Test Samples Onto the MM2S Training Set
+Principal Component Analysis (PCA) Projections of ssGSEA Rank Matrix for Test Samples Onto the MM2S Training Set
 }
 \description{
 This function projects the ssGSEA ranked matrix for the Test Data onto the ssGSEA ranked matrix of the MM2S training set. 
