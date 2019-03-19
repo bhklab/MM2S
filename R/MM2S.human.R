@@ -11,9 +11,9 @@
 #################################################################################
 if(getRversion() >= "2.15.1")  utils::globalVariables(c("HumanGMT", "genesetHuman","Frozen_ES_Rank_Matrix","MB_SampleInfo"))
 
-MM2S.human<-function(InputMatrix,xls_output,parallelize)
+MM2S.human<-function(InputMatrix, xls_output, parallelize, seed = 12345)
 {
-  set.seed(12345)
+  set.seed(seed)
   ###################################
   ## Parameter Checks
   ###################################
@@ -147,7 +147,7 @@ MM2S.human<-function(InputMatrix,xls_output,parallelize)
   
   TrainSet<-TrainSet[,-ncol(TrainSet)]
   ## Generate the predictions
-  set.seed(12345)
+  set.seed(seed)
   
   TestKKNN<-kknn(formula = Northcott$Group ~ ., TrainSet, TestSet, na.action = na.omit(),k = 5, distance = 1, kernel = "rectangular", scale=TRUE)
   
