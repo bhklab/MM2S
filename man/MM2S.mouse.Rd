@@ -8,13 +8,13 @@ This function generates MM2S subtype predictions for Mouse samples of interest.
 Users are provided the option to save this the predictions as a XLS file. 
 }
 \usage{
-MM2S.mouse(InputMatrix,xls_output,parallelize,seed = 12345)
+MM2S.mouse(InputMatrix,parallelize,seed = 12345,dir)
 }
 \arguments{
   \item{InputMatrix}{Matrix containing normalized gene expression data, with genes in rows and samples in columns. Gene IDs MUST be represented as Entres Gene IDs. }
-  \item{xls_output}{Option to save MM2S subtype predictions as a XLS file.}
   \item{parallelize}{Option to set number of cores to run ssGSEA calculations in parallel. Default is 1 (no parallelization)}
   \item{seed}{[integer] has to be specified by the user. Default value is "12345"}
+  \item{dir}{Option to save MM2S subtype predictions only if the user wants to and specifies the dir.}
 }
 \value{
 \item{Predictions}{MM2S Percent Confidence Predictions of Human Subtypes (Group3, Group4, Normal, SHH, WNT) for a given Mouse sample.}
@@ -40,7 +40,7 @@ Deena M.A. Gendoo
 # Data contains selected samples from a heterogenous WNT Mouse model
 data(WNT_Mouse_Expr)
 # Generate Subtype Predictions
-SubtypePreds<-MM2S.mouse(InputMatrix=WNT_Mouse_Expr[2:3],xls_output=TRUE,parallelize=2)
+SubtypePreds<-MM2S.mouse(InputMatrix=WNT_Mouse_Expr[2:3],parallelize=2, seed = 12345)
 
 # Generate Heatmap of Predictions
 PredictionsHeatmap(InputMatrix=SubtypePreds$Predictions, pdf_output=TRUE,pdfheight=5,pdfwidth=5)

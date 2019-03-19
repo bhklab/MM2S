@@ -36,7 +36,7 @@ PredictionsBarplot(InputMatrix=GTML_Mouse_Preds, pdf_output=TRUE,pdfheight=5,pdf
 # Generate heatmap after running raw expression data through MM2S
 # load Mouse gene expression data for the potential WNT mouse model
 data(WNT_Mouse_Expr)
-SubtypePreds<-MM2S.mouse(InputMatrix=WNT_Mouse_Expr[2:3],xls_output=TRUE,parallelize=1)
+SubtypePreds<-MM2S.mouse(InputMatrix=WNT_Mouse_Expr[2:3],parallelize=1, seed = 12345)
 # Generate Heatmap
 PredictionsBarplot(InputMatrix=SubtypePreds$Predictions,pdf_output=TRUE,pdfheight=5,pdfwidth=5)
 }

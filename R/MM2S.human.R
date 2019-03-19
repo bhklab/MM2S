@@ -11,7 +11,7 @@
 #################################################################################
 if(getRversion() >= "2.15.1")  utils::globalVariables(c("HumanGMT", "genesetHuman","Frozen_ES_Rank_Matrix","MB_SampleInfo"))
 
-MM2S.human<-function(InputMatrix, xls_output, parallelize, seed = 12345)
+MM2S.human<-function(InputMatrix, parallelize, seed = 12345, dir)
 {
   set.seed(seed)
   ###################################
@@ -40,12 +40,6 @@ MM2S.human<-function(InputMatrix, xls_output, parallelize, seed = 12345)
   ExpressionMatrixHumanTest <- apply(ExpressionMatrixHumanTest, c(1,2), as.numeric)
   rownames(ExpressionMatrixHumanTest) <- rownames(TestData)
   
-  ## Check boolean XLS
-  if(!is.logical(xls_output))
-  {
-    message("TRUE or FALSE needed for XLS output")
-    stop()
-  }
   
   ###################################
   ## Perform ssGSEA & get Rank Matrix
@@ -165,11 +159,10 @@ MM2S.human<-function(InputMatrix, xls_output, parallelize, seed = 12345)
   
   print.table(RESULTS) 
   
-  if(xls_output==TRUE)
-  {
-    write.table(RESULTS,file="MM2S_Predictions.xls",sep="\t",col.names=listOfCols,row.names=FALSE)
+  if(!missing(dir)){
+    write.table(RESULTS,file=file.path(dir, "MM2S_Predictions.xls"),sep="\t",col.names=listOfCols,row.names=FALSE)
   }
-  
+
   FINAL<-TestKKNN$prob*100
   colnames(FINAL)<-c("Group3","Group4","Normal","SHH","WNT")
   rownames(FINAL)<-rownames(HumanTest)

@@ -12,7 +12,7 @@
 
 if(getRversion() >= "2.15.1")  utils::globalVariables(c("MouseGMT", "genesetHuman","en_ES_Rank_Matrix","MB_SampleInfo"))
 
-MM2S.mouse<-function(InputMatrix, xls_output, parallelize, seed = 12345)
+MM2S.mouse<-function(InputMatrix, parallelize, seed = 12345, dir)
 {
   set.seed(seed)
   ###################################
@@ -41,12 +41,6 @@ MM2S.mouse<-function(InputMatrix, xls_output, parallelize, seed = 12345)
   ExpressionMatrixMouse <- apply(ExpressionMatrixMouse, c(1,2), as.numeric)
   rownames(ExpressionMatrixMouse) <- rownames(mouseData)
   
-  ## Check boolean CSV
-  if(!is.logical(xls_output))
-  {
-    message("TRUE or FALSE needed for XLS output")
-    stop()
-  }
   
   ###################################
   ## Perform ssGSEA & get Rank Matrix
@@ -166,9 +160,8 @@ MM2S.mouse<-function(InputMatrix, xls_output, parallelize, seed = 12345)
   
   print.table(RESULTS) 
   
-  if(xls_output==TRUE)
-  {
-    write.table(RESULTS,file="MM2S_Predictions.xls",sep = "\t",col.names=listOfCols,row.names=FALSE)
+  if(!missing(dir)){
+    write.table(RESULTS,file=file.path(dir, "MM2S_Predictions.xls"),sep="\t",col.names=listOfCols,row.names=FALSE)
   }
   
   FINAL<-TestKKNN$prob*100

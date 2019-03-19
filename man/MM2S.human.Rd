@@ -8,13 +8,13 @@ This function generates MM2S subtype predictions for human samples of interest.
 Users are provided the option to save this the predictions as a XLS file. 
 }
 \usage{
-MM2S.human(InputMatrix,xls_output,parallelize,seed = 12345)
+MM2S.human(InputMatrix,parallelize,seed = 12345,dir)
 }
 \arguments{
   \item{InputMatrix}{Matrix containing normalized gene expression data, with genes in rows and samples in columns. Gene IDs MUST be represented as Entres Gene IDs. }
-  \item{xls_output}{Option to save MM2S subtype predictions as a XLS file.}
   \item{parallelize}{Option to set number of cores to run ssGSEA calculations in parallel. Default is 1 (no parallelization)}
   \item{seed}{[integer] has to be specified by the user. Default value is "12345"}
+  \item{dir}{Option to save MM2S subtype predictions only if the user wants to and specifies the dir.}
 }
 \value{
 \item{Predictions}{MM2S Percent Confidence Predictions of Human Subtypes (Group3, Group4, Normal, SHH, WNT) for a given sample.}
@@ -38,7 +38,7 @@ Deena M.A. Gendoo
 \donttest{
  #load Human gene expression data containing selected samples from GSE37418
  data(Human_Cho_Expr)
- SubtypePreds<-MM2S.human(InputMatrix=Human_Cho_Expr[1:3],xls_output=TRUE,parallelize=2)
+ SubtypePreds<-MM2S.human(InputMatrix=Human_Cho_Expr[1:3],parallelize=2, seed = 12345)
 
  #Generate Heatmap of Predictions
  PredictionsHeatmap(InputMatrix=SubtypePreds$Predictions, pdf_output=TRUE,pdfheight=5,pdfwidth=5)

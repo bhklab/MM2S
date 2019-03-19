@@ -17,7 +17,7 @@ for(sample in 1:ncol(GTML))
 }
 
 # Conduct Subtype Predictions for those particular replicates, save results in a XLS file
-GTMLPreds<-MM2S.mouse(InputMatrix=GTML,xls_output=TRUE,parallelize=1)
+GTMLPreds<-MM2S.mouse(InputMatrix=GTML,parallelize=1, seed = 12345)
 
 ## ----GeneratePredictionHeatmap,echo=TRUE---------------------------------
 # Now generate a heatmap of the predictions and save the results in a PDF file.  
@@ -47,7 +47,7 @@ data(GSE37418Expr)
 HumanExpr<-exprs(GSE37418Expr)
 # Conduct Subtype Predictions for all samples, save results in a XLS file
 # [This will take a few minutes to compute]
-HumanPreds<-MM2S.human(InputMatrix=HumanExpr,xls_output=TRUE,parallelize=1)
+HumanPreds<-MM2S.human(InputMatrix=HumanExpr,parallelize=1, seed = 12345)
 
 ## ----ComparePredictions,echo=TRUE----------------------------------------
 # We first assess the distribution of the known subtypes for the 76 samples.
