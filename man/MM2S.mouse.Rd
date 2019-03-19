@@ -35,17 +35,18 @@ Deena M.A. Gendoo
 \code{\link[MM2S]{MM2S.human}},\code{\link[MM2S]{PredictionsHeatmap}},\code{\link[MM2S]{PCARender}}
 }
 \examples{
+\donttest{
 # Load Mouse gene expression data 
 # Data contains selected samples from a heterogenous WNT Mouse model
-# data(WNT_Mouse_Expr)
+data(WNT_Mouse_Expr)
 # Generate Subtype Predictions
-# SubtypePreds<-MM2S.mouse(InputMatrix=WNT_Mouse_Expr[2:3],xls_output=TRUE,parallelize=2)
+SubtypePreds<-MM2S.mouse(InputMatrix=WNT_Mouse_Expr[2:3],xls_output=TRUE,parallelize=2)
 
-## Not Run
-## Generate Heatmap of Predictions
-# PredictionsHeatmap(InputMatrix=SubtypePreds$Predictions, pdf_output=TRUE,pdfheight=5,pdfwidth=5)
-## Generate projections of the selected genesets from Mouse model onto the training set, using PCA
-# PCARender(GSVAmatrixTesting=SubtypePreds$RankMatrixTesting,
-# GSVAmatrixTraining=SubtypePreds$RankMatrixTraining)
+# Generate Heatmap of Predictions
+PredictionsHeatmap(InputMatrix=SubtypePreds$Predictions, pdf_output=TRUE,pdfheight=5,pdfwidth=5)
+# Generate projections of the selected genesets from Mouse model onto the training set, using PCA
+PCARender(GSVAmatrixTesting=SubtypePreds$RankMatrixTesting,
+GSVAmatrixTraining=SubtypePreds$RankMatrixTraining)
+}
 }
 \keyword{ classification }

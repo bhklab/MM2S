@@ -32,13 +32,13 @@ Manuscript URL: http://www.sciencedirect.com/science/article/pii/S08887543150007
 data(GTML_Mouse_Preds)
 ## Generate Barplot
 PredictionsBarplot(InputMatrix=GTML_Mouse_Preds, pdf_output=TRUE,pdfheight=5,pdfwidth=5)
-
-## Not Run
+\donttest{
 # Generate heatmap after running raw expression data through MM2S
 # load Mouse gene expression data for the potential WNT mouse model
-# data(WNT_Mouse_Expr)
-# SubtypePreds<-MM2S.mouse(InputMatrix=WNT_Mouse_Expr[2:3],xls_output=TRUE,parallelize=1)
+data(WNT_Mouse_Expr)
+SubtypePreds<-MM2S.mouse(InputMatrix=WNT_Mouse_Expr[2:3],xls_output=TRUE,parallelize=1)
 # Generate Heatmap
-# PredictionsBarplot(InputMatrix=SubtypePreds$Predictions,pdf_output=TRUE,pdfheight=5,pdfwidth=5)
+PredictionsBarplot(InputMatrix=SubtypePreds$Predictions,pdf_output=TRUE,pdfheight=5,pdfwidth=5)
+}
 }
 \keyword{ heatmap }

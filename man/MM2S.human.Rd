@@ -35,12 +35,14 @@ Deena M.A. Gendoo
 \code{\link[MM2S]{MM2S.mouse}},\code{\link[MM2S]{PredictionsHeatmap}},\code{\link[MM2S]{PCARender}}
 }
 \examples{
-## load Human gene expression data containing selected samples from GSE37418
-# data(Human_Cho_Expr)
-# SubtypePreds<-MM2S.human(InputMatrix=Human_Cho_Expr[1:3],xls_output=TRUE,parallelize=2)
+\donttest{
+ #load Human gene expression data containing selected samples from GSE37418
+ data(Human_Cho_Expr)
+ SubtypePreds<-MM2S.human(InputMatrix=Human_Cho_Expr[1:3],xls_output=TRUE,parallelize=2)
 
-#### Not Run
-## Generate Heatmap of Predictions
-## PredictionsHeatmap(InputMatrix=SubtypePreds$Predictions, pdf_output=TRUE,pdfheight=5,pdfwidth=5)
+ #Generate Heatmap of Predictions
+ PredictionsHeatmap(InputMatrix=SubtypePreds$Predictions, pdf_output=TRUE,pdfheight=5,pdfwidth=5)
+}	
 }
+
 \keyword{ classification }
