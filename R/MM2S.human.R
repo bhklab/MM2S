@@ -14,7 +14,6 @@ if(getRversion() >= "2.15.1")  utils::globalVariables(c("HumanGMT", "genesetHuma
 MM2S.human<-function(InputMatrix,xls_output,parallelize)
 {
   set.seed(12345)
-  options(warn=-1)
   ###################################
   ## Parameter Checks
   ###################################

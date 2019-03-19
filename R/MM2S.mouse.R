@@ -15,7 +15,6 @@ if(getRversion() >= "2.15.1")  utils::globalVariables(c("MouseGMT", "genesetHuma
 MM2S.mouse<-function(InputMatrix,xls_output,parallelize)
 {
   set.seed(12345)
-  options(warn=-1)
   ###################################
   ## Parameter Checks
   ###################################
