@@ -11,9 +11,11 @@
 #################################################################################
 if(getRversion() >= "2.15.1")  utils::globalVariables(c("HumanGMT", "genesetHuman","Frozen_ES_Rank_Matrix","MB_SampleInfo"))
 
-MM2S.human<-function(InputMatrix, parallelize, seed = 12345, dir)
+MM2S.human<-function(InputMatrix, parallelize, seed, dir)
 {
-  set.seed(seed)
+  if(!missing(seed)) {
+    set.seed(seed)
+  }
   ###################################
   ## Parameter Checks
   ###################################

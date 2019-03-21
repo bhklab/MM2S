@@ -7,14 +7,20 @@
 # In no event shall the University Health Network (UHN) or the authors be liable for any consequential damage of any kind, 
 # or any damages resulting from the use of MM2S.
 
+#seed = 12345
+
 #################################################################################
 #################################################################################
 
 if(getRversion() >= "2.15.1")  utils::globalVariables(c("MouseGMT", "genesetHuman","en_ES_Rank_Matrix","MB_SampleInfo"))
 
-MM2S.mouse<-function(InputMatrix, parallelize, seed = 12345, dir)
+MM2S.mouse<-function(InputMatrix, parallelize, seed, dir)
 {
-  set.seed(seed)
+	
+  if(!missing(seed)){
+  	set.seed(seed)
+  }	
+
   ###################################
   ## Parameter Checks
   ###################################

@@ -8,12 +8,12 @@ This function generates MM2S subtype predictions for Mouse samples of interest.
 Users are provided the option to save this the predictions as a XLS file. 
 }
 \usage{
-MM2S.mouse(InputMatrix,parallelize,seed = 12345,dir)
+MM2S.mouse(InputMatrix,parallelize,seed,dir)
 }
 \arguments{
   \item{InputMatrix}{Matrix containing normalized gene expression data, with genes in rows and samples in columns. Gene IDs MUST be represented as Entres Gene IDs. }
   \item{parallelize}{Option to set number of cores to run ssGSEA calculations in parallel. Default is 1 (no parallelization)}
-  \item{seed}{[integer] has to be specified by the user. Default value is "12345"}
+  \item{seed}{[integer] has to be specified by the user.}
   \item{dir}{Option to save MM2S subtype predictions only if the user wants to and specifies the dir.}
 }
 \value{
