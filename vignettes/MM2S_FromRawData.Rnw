@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{microtype}
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage[latin1]{inputenc}
 \usepackage{geometry}
 \usepackage{authblk}
