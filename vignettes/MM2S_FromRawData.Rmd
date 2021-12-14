@@ -1,5 +1,5 @@
 ---
-title: "MM2S: a package for Medulloblastoma Subtype Predictions"
+title: "MM2S: a package for Medulloblastoma Subtype Predictions from Raw Data"
 author:
 - name: Deena M.A. Gendoo
   affiliation:
@@ -11,11 +11,11 @@ author:
   - *pm
   - *mbp
   email: benjamin.haibe.kains@utoronto.ca
-date: 2021-02-01
+date: "`r Sys.Date()`"
 output:
     BiocStyle::html_document
 vignette: >
-    %\VignetteIndexEntry{MM2S: a package for Medulloblastoma Subtype Predictions}
+    %\VignetteIndexEntry{MM2S: a package for Medulloblastoma Subtype Predictions from Raw Data}
     %\VignetteEngine{knitr::rmarkdown}
     %\VignetteEncoding{UTF-8}
 ---
