@@ -10,9 +10,10 @@
 #################################################################################
 #################################################################################
 
-PredictionsHeatmap<-function(InputMatrix,pdf_output,pdfheight,pdfwidth)
+PredictionsHeatmap <- function(InputMatrix, pdf_output, pdfheight, pdfwidth)
 {
-  colorscheme<-c("#ffffff","#ffffcc","#c7e9b4","#41b6c4","#2c7fb8","#253494") 
+  colorscheme<-c("#ffffff", "#ffffcc", "#c7e9b4", "#41b6c4", 
+    "#2c7fb8", "#253494") 
   
   if(is.logical(pdf_output))
   {
